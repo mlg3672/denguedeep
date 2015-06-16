@@ -5,17 +5,18 @@ setwd("Documents/Python-Projects/dengue")
 cases<-read.csv("dengue.csv", colClasses="character")
 
 ## set column names
-header<- c("year","week","state","city","address","cases","duration")
+colnames(cases)<- c("year","week","state","city","address","cases","duration")
 
-## new column 'locale' concatenate location address,city,state,country
-cases$locale <-
 ## use location columns to find lat long location
 library(ggmap)
-cases$long,cases$lat <-geocode(cases.locale)
-## make a new data frame with start and stop dates
+cases$longlat <-as.numeric(geocode(paste(cases$addresss,cases$city,cases$state,"Malaysia",sep=",")))
+
+## make a new data columns with start and stop dates
 library(lubridate)
-cases$start<-
-cases$end<-
+cases$start<-as.Date(paste(cases$year,"01","01",sep="-") + cases$weeks*7
+cases$end<- cases$start + cases$duration
+cases$month<-month(cases$start)
+
 ## plot cases using lat long, weight with number of cases
 
 ## explore relationship between number of cases, duration, location
