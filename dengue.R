@@ -24,12 +24,14 @@ gisdf <-geocode(paste(subcases$address,subcases$city,subcases$state,"Malaysia",s
 subcases<-cbind(gisdf,subcases)
 subcases<-subcases[order(subcases$cases),]
 means<-tapply(as.numeric(subcases$cases),subcases$state,mean)
+counts<-tapply(as.numeric(subcases$cases),subcases$state,count)
 ## plot cases using lat long, weight with number of cases
 qplot(rownames(means),means)
 plot(subcases$week,subcases$cases)
 plot(subcases$year,subcases$cases)
 plot(subcases$duration,subcases$cases)
 plot(subcases$lat,subcases$cases)
+plot(subcases$lon,subcases$lat)
 ## explore relationship between number of cases, duration, location
 
 ## overlap with external data - weather, precipatition, population, age ranges, density
