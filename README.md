@@ -1,5 +1,9 @@
-Dengue Project Goals 
+# Dengue Project Goals 
 
+## Purpose
+This project helps the government of Malaysia make use of their public dataset on dengue (mosquito-borne disease) to predict future outbreaks using machine learning and GIS tools.
+
+## Approach
 1. subset data - get locations -done
 2. divide data by state locations for analysis -done
 3. structure data by date (week or month) - done
@@ -13,11 +17,11 @@ Dengue Project Goals
 	- humidity
 	- week/date - done
 	- duration -done
-5. percent of pop?
-5. what are vars correlated with incidence?
+5. percent of population infected?
+6. what are the variables  correlated with incidence?
+7. calc probability incidence
+8. measure error from test set
 
 
-5. calc probability incidence
-6. measure error from test set
-
+## Results 
 
